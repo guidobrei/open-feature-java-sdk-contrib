@@ -129,10 +129,6 @@ public class GrpcConnector {
 
             ServiceGrpc.ServiceStub localServiceStub = this.serviceStub;
 
-            if (this.streamDeadlineMs > 0) {
-                localServiceStub = localServiceStub.withDeadlineAfter(this.streamDeadlineMs, TimeUnit.MILLISECONDS);
-            }
-
             localServiceStub.eventStream(EventStreamRequest.getDefaultInstance(), responseObserver);
 
             try {

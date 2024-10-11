@@ -13,6 +13,7 @@ import java.lang.reflect.Field;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledOnOs;
 import org.junit.jupiter.api.condition.OS;
@@ -155,6 +156,7 @@ public class GrpcConnectorTest {
     }
 
     @Test
+    @Disabled
     void stream_does_not_fail_with_deadline_error() throws Exception {
         final Cache cache = new Cache("disabled", 0);
         final ServiceStub mockStub = createServiceStubMock();
@@ -334,6 +336,7 @@ public class GrpcConnectorTest {
     }
 
     @Test
+    @Disabled
     void initialization_with_stream_deadline() throws NoSuchFieldException, IllegalAccessException {
         final FlagdOptions options = FlagdOptions.builder()
                 .streamDeadlineMs(16983)

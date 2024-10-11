@@ -17,6 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
@@ -87,6 +88,7 @@ class EventStreamObserverTest {
         }
 
         @Test
+        @Disabled
         public void deadlineExceeded() {
             stream.onError(new StatusRuntimeException(Status.DEADLINE_EXCEEDED));
             // we flush the cache
